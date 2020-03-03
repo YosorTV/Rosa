@@ -8,9 +8,7 @@ header{
 
   nav{
     height: 7.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include d-center;
 
     &::before{
       content: '';
@@ -47,9 +45,42 @@ header{
       flex-direction: column;
       justify-content: space-around;
       z-index: 1250;
-      // transform: translateX(-100%);
+      transform: translateX(-100%);
       transition: transform .5s;
     }
+    .nav-item{
+      border-bottom: 2px solid rgba(255, 255, 255, .3);
+    }
+    .nav-link{
+      display: block;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      margin-right: -2px;
+      transition: color.5s;
+      margin-bottom: 12px;
+      text-decoration: none;
+      &:hover{
+        color:$secondary-font-color;
+      }
+    }
+  }
+}
+
+.open{
+  .fa-times{
+    display: block;
+  }
+  .fa-bars{
+    display: none;
+  }
+  .nav-list{
+    transform: translateX(0);
+  }
+  nav::before{
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

@@ -2,3 +2,18 @@
   width: $width;
   height: $height;
 }
+
+@mixin d-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin btn{
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: -2px;
+  border:none;
+  background:none;
+}
