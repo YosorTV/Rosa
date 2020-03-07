@@ -1,8 +1,13 @@
 import scrollreveal from 'scrollreveal';
 
 const selectElement = (element) => document.querySelector(element);
+const isClicked = (element) => body.classList.contains(element);
 
-let menuToggler = selectElement('.menu-toggle');
-let body = selectElement('body');
+const menuToggler = selectElement('.menu-toggle');
+const body = selectElement('body');
 
-menuToggler.addEventListener('click', ()=> body.classList.toggle('open'));
+menuToggler.addEventListener('click', () => {
+    body.classList.toggle('open');
+    isClicked('open') ? body.style.overflowY = 'hidden' :
+                        body.style.overflowY = 'visible';
+});
