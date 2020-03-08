@@ -13,8 +13,14 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 section {
+  margin: 0 auto;
   padding: 2.5rem 0;
+  overflow: hidden;
 }
 
 img {
@@ -28,4 +34,115 @@ p {
 
 .container {
   padding: 0 2.5rem;
+}
+
+.active{
+  position: relative;
+  &::before{
+    content:'';
+    position: absolute;
+    @include size($width:100%, $height: 2px);
+    background-color: #fff;
+    left: 0;
+    bottom: -3px;
+  }
+}
+
+@media screen and(min-width: 900px){
+  section{
+    padding: 7.9rem 0;
+  }
+  .hero{
+    padding: 0;
+  }
+  .menu-toggle{
+    display: none;
+  }
+  .nav{
+    justify-content: space-between;
+
+    .nav-list{
+      position: initial;
+      width: initial;
+      height: initial;
+      background-color: transparent;
+      padding: 0;
+      justify-content: initial;
+      flex-direction: row;
+      transform: initial;
+      transition: initial;
+
+      .nav-item{
+        margin: 0 2.4rem;
+        border: none;
+        &:last-child{
+          margin-right: 0;
+        }
+        .nav-link{
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .sub-headline{
+    font-size: 10rem;
+  }
+  .first-letter{
+    font-size: 12.2rem;
+  }
+  .headline{
+    font-size: 4.7rem;
+    letter-spacing: 0.8rem;
+  }
+  .line{
+    max-width: 11.4rem;
+  }
+  .restaurant-info{
+    display: flex;
+    align-items: center;
+  }
+  .padding-right{
+    padding-right: 7rem;
+  }
+  .restaurant-info > div {
+    flex: 1;
+  }
+
+  .footer-content{
+    max-width: 77.5rem;
+    margin: auto;
+    .footer-content-about{
+      max-width: 51.3rem;
+      margin: 0 auto 5.4rem;
+    }
+    .footer-content-divider{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .socal-media,
+  .newsletter-form{
+    width: 100%;
+    min-width: 27.3rem;
+    margin: 0 1rem;
+  }
+  .social-icons i{
+    opacity: 1;
+  }
+  .newsletter-btn{
+    margin-right: 7.5rem;
+  }
+}
+
+@keyframes up {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
 }
